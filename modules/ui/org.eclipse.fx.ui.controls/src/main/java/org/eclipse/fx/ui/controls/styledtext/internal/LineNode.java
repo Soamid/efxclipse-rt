@@ -751,7 +751,7 @@ public class LineNode extends StackPane {
 
 //		setStyle("-fx-border-width: 0.1px; -fx-border-color: red");
 
-		getChildren().setAll(this.insertionMarkerLayer, this.selectionLayer, this.textLayer, this.caretLayer, this.annotationLayer);
+		getChildren().setAll(this.insertionMarkerLayer, this.textLayer, this.selectionLayer, this.caretLayer, this.annotationLayer);
 
 		if (debugAnimation) {
 			this.debugUpdateAnnotations = new DebugMarker(Color.RED, 400);
