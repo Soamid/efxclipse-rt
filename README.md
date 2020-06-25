@@ -11,3 +11,6 @@ Check this branch out, switch to the `releng\org.eclipse.fx.releng` and run the 
 mvn clean verify
 ```
 
+## Changes to original efxclipse-rt
+- Selection layer in `StyledTextArea` was moved over text layer in order to cover lines with styled background.
+
