@@ -19,10 +19,14 @@ import javafx.scene.shape.Rectangle;
 @SuppressWarnings("javadoc")
 public class ScrollbarPane<N extends Node> extends Region {
 
+	public static final int DEFAULT_SCROLLBAR_WIDTH = 16;
+
 	public final ScrollBar horizontal;
 	public final ScrollBar vertical;
 	private Rectangle clip;
 	private N center;
+
+	private int scrollbarWidth = DEFAULT_SCROLLBAR_WIDTH;
 
 	public ScrollbarPane() {
 		this.horizontal = new ScrollBar();
@@ -49,10 +53,14 @@ public class ScrollbarPane<N extends Node> extends Region {
 		}
 	}
 
+	public void setScrollbarWidth(int scrollbarWidth) {
+		this.scrollbarWidth = scrollbarWidth;
+	}
+
 	@Override
 	protected void layoutChildren() {
 		int space = 0;
-		int w = 16;
+		int w = scrollbarWidth;
 		this.horizontal.resizeRelocate(0, getHeight() - w, getWidth() - w , w);
 		this.vertical.resizeRelocate(getWidth() - w, 0, w, getHeight()- w);
 
